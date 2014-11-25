@@ -1,0 +1,17 @@
+{
+  "name": "HelloFamousGulped",
+  "version": "0.0.0",
+  "authors": [
+    "PEM--",
+    "Antoine Charbonnier"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,11 @@
+css_dir                    = 'css'
+fonts_dir                  = 'app/css/fonts'
+images_dir                 = 'www/img'
+generated_images_dir       = 'www/img'
+http_path                  = '/'
+http_stylesheets_path      = '/css'
+http_fonts_path            = '/css/fonts'
+http_generated_images_path = 'img'
+http_images_dir            = 'img'
+# images_path                = '/img/'
+# asset_cache_buster         = false
