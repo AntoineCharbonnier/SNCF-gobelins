@@ -1,0 +1,98 @@
+.coffee{
+  width: 100%;
+  height: 100%;
+  display: table;
+  .coffee__container{
+    position: relative;
+    height: 100%; 
+    // background: -webkit-gradient(linear, top left, bottom left, from(#8a5e90), to(#89bcc0));
+    // background: -webkit-linear-gradient(#8a5e90, #89bcc0);
+    // background: linear-gradient(#8a5e90, #89bcc0);
+    background-color : #89bcc0;
+    display: table-cell;
+    vertical-align : middle;
+    .left__container{
+      position: absolute;
+      float: left;
+      width: 60%;
+      top: calc(50% - 200px );
+      h2
+      {
+        position: relative;
+        width : 600px;
+        left: -40px;
+        text-align: center;
+        margin: 0px auto 0 auto ;
+        display: block;
+        top: 50px;
+        font-size: 50px;
+        text-align: left;
+      }
+      h1
+      {
+        width : 100%;
+        position: relative;
+        line-height: 125px;
+        margin: 0px auto 0 auto ;
+        top: 80px;
+        font-size: 200px;
+      }
+      h3{
+        display: block;
+        width : 320px;
+        position: relative;
+        margin: 0 auto 0 auto ;
+        top: 90px;
+        left: 220px;
+        font : normal 400 50px "Merryweather";
+        // right: -400px;
+      }
+
+    }
+    h6{
+      position: relative;
+      display: block;
+      margin: 0 auto 0 auto ;
+      width: 600px;
+      // left: 50%;
+      top: 400px;
+    }
+    .coffee__svg{
+      position: absolute;
+      top: -210px;
+      right:  0px;
+      float: right;
+      width: 60%;
+      z-index: 20;
+
+    }
+    .drop1{
+      position: absolute;
+      display: block;
+      top: 550px;
+      right: 700px;
+    }
+    .drop2{
+      position: absolute;
+      display: block;
+      top: 550px;
+      right: 720px;
+    }
+    .spoon{
+      position: absolute;
+      display: block;
+      top: 500px;
+      right: 280px;
+      z-index: 1;
+    }
+    .arrow{
+      position: relative;
+      display: block;
+      width: 38px;
+      height: 22px;
+      top: 450px;
+      background: url("../img/intro/arrow.png");
+      margin: 0 auto ;
+    }
+  }
+}

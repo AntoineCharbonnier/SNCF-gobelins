@@ -1,0 +1,80 @@
+.clock{
+  width: 100%;
+  height: 100%;
+  display: table;
+  .clock__container{
+    position: relative;
+    height: 100%; 
+    // background: -webkit-gradient(linear, top left, bottom left, from(#8a5e90), to(#89bcc0));
+    // background: -webkit-linear-gradient(#8a5e90, #89bcc0);
+    // background: linear-gradient(#8a5e90, #89bcc0);
+    background-color : #c93960;
+    display: table-cell;
+    vertical-align : middle;
+    .left__container{
+      position: absolute;
+      float: left;
+      width: 60%;
+      top: calc(50% - 300px );
+      h2
+      {
+        position: relative;
+        width : 300px;
+        left: -100px;
+        text-align: center;
+        margin: 0px auto 0 auto ;
+        display: block;
+        top: 50px;
+        font-size: 40px;
+        text-align: left;
+      }
+      h1
+      {
+        width : 100%;
+        position: relative;
+        line-height: 125px;
+        margin: 0px auto 0 auto ;
+        top: 80px;
+        left: 130px;
+        font-size: 180px;
+      }
+      h3{
+        display: block;
+        width : 320px;
+        position: relative;
+        margin: 0 auto 0 auto ;
+        top: 90px;
+        left: 315px;
+        font : normal 400 40px "Merryweather";
+        // right: -400px;
+      }
+
+    }
+    h6{
+      position: relative;
+      display: block;
+      margin: 0 auto 0 auto ;
+      width: 600px;
+      // left: 50%;
+      top: 400px;
+    }
+    .clock__svg{
+      position: absolute;
+      top: -210px;
+      right:  0px;
+      float: right;
+      width: 60%;
+      z-index: 20;
+
+    }
+    .arrow{
+      position: relative;
+      display: block;
+      width: 38px;
+      height: 22px;
+      top: 450px;
+      background: url("../img/intro/arrow.png");
+      margin: 0 auto ;
+    }
+  }
+}

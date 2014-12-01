@@ -1,0 +1,68 @@
+html,body{
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+}
+
+h1{
+  font : normal 700 150px "Avenir";
+  color: white;
+  text-transform: uppercase;
+  text-align : center;
+}
+
+h2{
+  font : normal 500 100px "GeorgiaItalic";
+  color: white;
+  text-align : center;
+}
+
+h3{
+  font : normal 500 70px "Merryweather";
+  color: white;
+  text-align : center;
+}
+
+h4{
+  font : normal 400 20px "Avenir";
+  color: white;
+  text-align : center;
+}
+
+h5{
+  font : normal 500 30px "Avenir";
+  color: white;
+  text-align : center;
+}
+h6{
+  font : normal 500 20px "Avenir";
+  color: white;
+  text-align : center;
+  border: 1px solid white;
+  border-radius : 3px;
+  padding : 30px 20px;
+}
+
+p{
+  font : normal 400 18px "Avenir";
+  color: white;
+  text-align : left;
+}
+
+a{
+  font : normal 700 30px "Merryweather";
+  color: white;
+  text-transform: uppercase;
+  text-decoration : none;
+  text-align : center;
+}
+.clear{
+  clear: both;
+  display: block;
+}
