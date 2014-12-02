@@ -109,28 +109,57 @@ html(lang="fr")
         h3 décalés! 
         h5 Comment ça marche ? 
         .arrow
-    .saving
+    //- .saving
       .section.saving__container
         h2 Faites des 
         h1 économies
         h3 sur vos billets.
-        select
-          option(value='', disabled='disabled', selected='selected') ligne -----
-          option(value='1') A
-          option(value='2') B
-          option(value='1') D
-          option(value='2') C
-          option(value='1') E
-          option(value='2') F
-          option(value='1') G
-          option(value='2') H
-
-
+        
+        .select__box
+          h4 Choisissez votre ligne : 
+          ul 
+            li.title Ligne ----
+            li A
+            li B
+            li C
+            li D
+          h4 OK
         p 
-          |Cet outil vous permet de vous renseigner sur les temps d’affluence de votre ligne pour vous éviter<br>de prendre les transports pendant les heures de pointe.
-          |La SNCF lance à partir du 1er Décembre 2014 un nouveau concept : Les prix des billets seront réduits<br>de moitié en dehors des heures de pointe. Le traffic sera fluidifié, vous ferez des économies<br>et profiterez de votre temps libre sur les temps perdus en trajets surchargés habituellement.
+          |Cet outil vous permet de vous renseigner sur les temps d’affluence de votre ligne pour vous éviter de prendre les transports pendant les heures de pointe.<br>
+          |La SNCF lance à partir du 1er Décembre 2014 un nouveau concept : Les prix des billets seront réduits de moitié en dehors des heures de pointe. Le traffic sera fluidifié, vous ferez des économies et profiterez de votre temps libre sur les temps perdus en trajets surchargés habituellement.
 
         .arrow
+    .data
+      .section.data__container
+        .left--side
+          h2 Ligne n° <span class="line--number">115</span>
+          h4 Alfort > Menilmontant
+        .right--side   
+          .select__box
+            h4 Choisissez votre ligne : 
+            ul 
+              li.title Ligne ----
+              li A
+              li B
+              li C
+              li D
+            h4 OK
+        .timeline__container
+
+        //- .impact
+          .impact--affluence
+            img(src="img/dentifrice-flat.png" alt="Dentifrice" class="toothpaste")
+            h2 Affluence
+            h2.count 88% 
+          .impact--saving
+            img(src="img/dentifrice-flat.png" alt="Dentifrice" class="toothpaste")
+            h2 Economie
+            h2.count 0% 
+          .impact--stress
+            img(src="img/dentifrice-flat.png" alt="Dentifrice" class="toothpaste")
+            h2 Stress
+            h2.count 150% 
+          
 
 
 

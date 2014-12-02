@@ -10,27 +10,26 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <div class="saving">
-      <div class="section saving__container">
-        <h2>Faites des </h2>
-        <h1>économies</h1>
-        <h3>sur vos billets.</h3>
-        <select>
-          <option value="" disabled="disabled" selected="selected">ligne -----</option>
-          <option value="1">A</option>
-          <option value="2">B</option>
-          <option value="1">D</option>
-          <option value="2">C</option>
-          <option value="1">E</option>
-          <option value="2">F</option>
-          <option value="1">G</option>
-          <option value="2">H</option>
-        </select>
-        <p>
-          Cet outil vous permet de vous renseigner sur les temps d’affluence de votre ligne pour vous éviter<br>de prendre les transports pendant les heures de pointe.
-          La SNCF lance à partir du 1er Décembre 2014 un nouveau concept : Les prix des billets seront réduits<br>de moitié en dehors des heures de pointe. Le traffic sera fluidifié, vous ferez des économies<br>et profiterez de votre temps libre sur les temps perdus en trajets surchargés habituellement.
-        </p>
-        <div class="arrow"></div>
+    <div class="data">
+      <div class="section data__container">
+        <div class="left--side">
+          <h2>Ligne n° <span class="line--number">115</span></h2>
+          <h4>Alfort > Menilmontant</h4>
+        </div>
+        <div class="right--side">  
+          <div class="select__box">
+            <h4>Choisissez votre ligne : </h4>
+            <ul>
+              <li class="title">Ligne ----</li>
+              <li>A</li>
+              <li>B</li>
+              <li>C</li>
+              <li>D</li>
+            </ul>
+            <h4>OK</h4>
+          </div>
+        </div>
+        <div class="timeline__container"></div>
       </div>
     </div>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js">  </script>

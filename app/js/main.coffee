@@ -45,3 +45,6 @@ $('#teethPath13').css({ stroke: "none" });
 
 
 console.log "this is the end"
+
+
+
