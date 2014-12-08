@@ -13,7 +13,7 @@
       width: 50%;
       float: left;
       height: 300px;
-      top: -300px;
+      top: -150px;
       h2{
         font : normal 500 70px "GeorgiaItalic";
         position: relative;
@@ -38,7 +38,7 @@
         width : 520px;
         position: relative;
         margin: 0 auto 0 auto ;
-        // top: -80px;
+        top: -110px;
         // right: -345px;
       }
     }
@@ -47,7 +47,7 @@
       width: 50%;
       float: right;
       height: 300px;
-      top: -300px;
+      top: -150px;
     }
     
     
@@ -102,6 +102,74 @@
           border-bottom: 1px solid white;
           border-left : 0px;
           border-right : 0px;
+        }
+      }
+    }
+    .timeline__container{
+      position: relative;
+      height: 65px;
+      width: 100%;
+      top: 0px;
+      img{
+        position: absolute;
+        display: block;
+        top: 130px;
+        left: calc( 50% - 555px);
+      }
+    }
+    .impact__container{
+      position: relative;
+      width: 50%;
+      margin: 0 auto; 
+      img{
+        margin: 0 auto;
+      }
+      h2{
+        font : normal 400 30px "GeorgiaItalic";
+      }
+      h2.count{
+        font : normal 500 80px "GeorgiaItalic";
+      }
+      .percent--style{
+        font : normal 400 30px "GeorgiaItalic";
+      }
+      .more--style{
+        font : normal 400 50px "GeorgiaItalic";
+      }
+      .impact--affluence{
+        position: relative;
+        width: 33%;
+        float: left;
+        margin: 0 auto;
+        text-align: center;
+        vertical-align: middle;
+        img{
+          width: 262px;
+          height: 168.5px;
+        }
+      }
+      .impact--saving{
+        position: relative;
+        width: 33%;
+        float: left;
+        margin: 0 auto;
+        text-align: center;
+        vertical-align: middle;
+        img{
+          width: 168.5px;
+          height: 168.5px;
+        }
+      }
+      .impact--stress{
+        position: relative;
+        width: 33%;
+        float: left;
+        margin: 0 auto;
+        text-align: center;
+        vertical-align: middle;
+        img{
+          width:168.5px ;
+          height: 168.5px;
         }
       }
     }
