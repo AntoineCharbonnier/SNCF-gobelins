@@ -50,12 +50,13 @@ class ScrollManager extends ScrollManagerSingleton
         @index = @i
         console.log "index after down",@index
         @pages[@keyArray[@index]].show()
-      # if delta > 0 
-      #   @pages[@keyArray[@index]].hide()
-      #   i--
-      #   @index = i
-      #   @pages[@keyArray[@index]].show()
-      #   console.log "UP"
+      if delta == 1 
+        if @index != 0
+          @pages[@keyArray[@index]].hide()
+          @i--
+          @index = @i
+          @pages[@keyArray[@index]].show()
+          console.log "UP"
 
 
 
