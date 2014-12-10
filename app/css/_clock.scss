@@ -61,10 +61,11 @@
     }
     .clock__svg{
       position: absolute;
-      top: -210px;
+      // top: -100px;
+      bottom : -80px;
       right:  0px;
       float: right;
-      width: 60%;
+      width: 1000px;
       z-index: 20;
 
     }

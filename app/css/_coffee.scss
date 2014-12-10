@@ -60,10 +60,11 @@
     }
     .coffee__svg{
       position: absolute;
-      top: -383px;
+      // top: -185px;
+      bottom: -100px;
       right:  0px;
       float: right;
-      width: 60%;
+      width: 1000px;
       z-index: 20;
 
     }

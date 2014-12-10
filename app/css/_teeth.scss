@@ -61,10 +61,11 @@
     }
     .teeth__svg{
       position: absolute;
-      top: -210px;
+      // top: -210px;
+      bottom: 50px;
       right:  0px;
       float: right;
-      width: 60%;
+      width: 1000px;
       z-index: 20;
 
     }
