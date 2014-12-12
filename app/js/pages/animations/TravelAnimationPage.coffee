@@ -34,7 +34,7 @@ class TravelAnimationPage
 
     # mySplitTextH1 = new SplitText(@h1, {type:"words,chars"})
     # charsH1 = mySplitTextH1.chars  
-    @tm.to(@h1, 1,autoAlpha: 1, scrambleText:{text:"Voyager en", chars:"Nique la sncf", revealDelay:0.5, tweenLength:false, ease:Linear.easeNone},t+=1.5)
+    @tm.to(@h1, 1,autoAlpha: 1, scrambleText:{text:"Horaires ", chars:"Nique la sncf", revealDelay:0.5, tweenLength:false, ease:Linear.easeNone},t+=1.5)
 
     @tm.to( @container, 1.5,{autoAlpha: 1, ease: Ease.easeIn}, t+=.2)
     @tm.to( @img, 1,{autoAlpha: 1,x: 0,scale: 1, ease: Ease.easeIn}, t+=.2)

@@ -1,0 +1,283 @@
+@import "compass/utilities/";
+@import "compass/css3/";
+
+// -----------------
+// -- MIXINS KEYFRAMES AND ANIMATION
+// -----------------
+@mixin keyframes($animationName){
+  @-webkit-keyframes #{$animationName}{
+    @content;
+  }
+  @-moz-keyframes #{$animationName}{
+    @content;
+  }
+  @-o-keyframes #{$animationName}{
+    @content;
+  }
+  @keyframes #{$animationName}{
+    @content;
+  }
+}
+
+@mixin keyframesCustomWidth($animationName, $width){
+  @-webkit-keyframes #{$animationName}{
+    @content;
+  }
+  @-moz-keyframes #{$animationName}{
+    @content;
+  }
+  @-o-keyframes #{$animationName}{
+    @content;
+  }
+  @keyframes #{$animationName}{
+    @content;
+  }
+}
+
+@mixin animation-fill-mode($fill-mode) {
+  -webkit-animation-fill-mode: $fill-mode;
+          animation-fill-mode: $fill-mode;
+}
+
+// Usage: @include animation(block-1-animate, $speed, ease-out, infinite)
+@mixin animation ($animation, $duration, $transition, $iteration: 1) {
+  -webkit-animation-name: $animation;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-timing-function: $transition;
+  -webkit-animation-iteration-count: $iteration;
+  -moz-animation-name: $animation;
+  -moz-animation-duration: $duration;
+  -moz-animation-timing-function: $transition;
+  -moz-animation-iteration-count: $iteration;
+  -o-animation-name: $animation;
+  -o-animation-duration: $duration;
+  -o-animation-timing-function: $transition;
+  -o-animation-iteration-count: $iteration;
+  animation-name: $animation;
+  animation-duration: $duration;
+  animation-timing-function: $transition;
+  animation-iteration-count: $iteration;
+}
+
+
+@mixin animation-delay($delay){
+  -webkit-animation-delay: $delay;
+  -moz-animation-delay: $delay;
+  -o-animation-delay: $delay;
+  animation-delay: $delay;
+}
+
+@mixin animationButtonOutroWidth($width){
+  @if $width == 270px {
+    @include animation(buttonXLfadeInOpen, 0.4s, ease-out);
+  }
+  @else if $width == 275px {
+    @include animation(buttonXXLfadeInOpen, 0.4s, ease-out);
+  }
+  @else if $width == 285px {
+    @include animation(buttonXXXLfadeInOpen, 0.4s, ease-out);
+  }
+  @else {
+    @include animation(buttonXXXXLfadeInOpen, 0.4s, ease-out);
+  }
+}
+
+// -----------------
+// EFFECTS
+// -----------------
+
+// --- FADE IN
+
+@include keyframes (fadeIn) {
+  0%   { @include opacity(0); }
+  100% { @include opacity(1); }
+}
+
+@include keyframes(fadeInDown){
+  0% {
+    opacity: 0;
+    @include translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    @include translateY(0);
+  }
+}
+
+@include keyframes(fadeInDownSlow){
+  0% {
+    opacity: 0;
+    @include translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    @include translateY(0);
+  }
+}
+
+@include keyframes(fadeInUp){
+  0% {
+    opacity: 0;
+    @include translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    @include translateY(0);
+  }
+}
+
+// --- FADE OUT
+
+@include keyframes(fadeOut) {
+  0%   { @include opacity(1); }
+  100% { @include opacity(0); }
+}
+
+@include keyframes(fadeOutDown){
+  0% {
+    opacity: 1;
+    @include translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    @include translateY(20px);
+  }
+}
+
+@include keyframes(fadeOutRight){
+  0% {
+    opacity: 1;
+    @include translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    @include translateX(20px);
+  }
+}
+
+@include keyframes(fadeOutLeft){
+  0% {
+    opacity: 1;
+    @include translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    @include translateX(-20px);
+  }
+}
+
+@include keyframes(buttonfadeInOpen) {
+  0% {
+    width: 0px; 
+    padding: 0;
+  }
+  50%{
+    padding: 0 20px 0 40px;
+  }
+  100% {
+    @include opacity(1);
+    width: 130px; 
+  }
+}
+
+@include keyframes(buttonXLfadeInOpen) {
+  0% {
+    width: 0px; 
+    padding: 0;
+  }
+  50%{
+    padding: 0 20px 0 40px;
+  }
+  100% {
+    @include opacity(1);
+    width: 270px; 
+  }
+}
+
+@include keyframes(buttonXXLfadeInOpen) {
+  0% {
+    width: 0px; 
+    padding: 0;
+  }
+  50%{
+    padding: 0 20px 0 40px;
+  }
+  100% {
+    @include opacity(1);
+    width: 275px; 
+  }
+}
+
+@include keyframes(buttonXXXLfadeInOpen) {
+  0% {
+    width: 0px; 
+    padding: 0;
+  }
+  50%{
+    padding: 0 20px 0 40px;
+  }
+  100% {
+    @include opacity(1);
+    width: 285px; 
+  }
+}
+
+
+@include keyframes(buttonXXXXLfadeInOpen) {
+  0% {
+    width: 0px; 
+    padding: 0;
+  }
+  50%{
+    padding: 0 20px 0 40px;
+  }
+  100% {
+    @include opacity(1);
+    width: 300px; 
+  }
+}
+
+
+@include keyframes(circleTransformLeft){
+  0%{
+    width: 130px;
+    padding: 0 20px 0 40px;
+    left: 60px;
+  }
+  100%{
+    left: 175px;
+    width: 41px;
+    padding: 0;
+  }
+}
+
+@include keyframes(circleTransformRight){
+  0%{
+    width: 130px;
+    padding: 0 20px 0 40px;
+    left: 200px;
+  }
+  100%{
+    left: 175px;
+    width: 41px;
+    padding: 0;
+  }
+}
+
+@include keyframes(circleLoader){
+  0%{
+    @include opacity(0);
+    width: 120px;
+    height: 120px;
+    margin: -62px 0 0 -62px;
+  }
+  40%{
+    @include opacity(1);
+  }
+  100%{
+    @include opacity(1);
+    width: 147px;
+    height: 147px;
+    margin: -74px 0 0 -74px;
+  }
+}

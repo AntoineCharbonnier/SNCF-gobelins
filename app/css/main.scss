@@ -3,13 +3,14 @@
 @import "compass/utilities";
 
 
-@include font-face("AvenirNextCondensed", font-files("Avenir Next Condensed.ttc", truetype));
-@include font-face("AvenirNext", font-files("Avenir Next.ttc", truetype));
+@include font-face("AvenirNextCondensed", font-files("Avenir_Next_Condensed.ttc", truetype));//http://antoinecharbonnier.fr/test/SNCF/css/fonts/Avenir_Next_Condensed.ttc
+@include font-face("AvenirNext", font-files("Avenir_Next.ttc", truetype));
 @include font-face("Avenir", font-files("Avenir.ttc", truetype));
 @include font-face("GeorgiaItalic", font-files("Georgia Italic.ttf", truetype));
 @include font-face("Merryweather", font-files("typoserifunamed.ttf", truetype));
 @include font-face("AvenirNextLTPro-Bold", font-files("AvenirNextLTPro-Bold.ttf", truetype));
 
+@import "media_queries";
 @import "utils";
 @import "transiliens";
 @import "coffee";
@@ -38,72 +39,3 @@
   height: 100%;
   overflow: hidden;
 }
-
-// /* Centered texts in each section
-// * --------------------------------------- */
-
-// .section {
-//   text-align: center;
-//   // opacity: 0;
-// }
-
-// /* Defining each section background and styles
-// * --------------------------------------- */
-
-// #section0 {
-//   background: -webkit-gradient(linear, top left, bottom left, from(#8a5e90), to(#89bcc0));
-//   background: -webkit-linear-gradient(#8a5e90, #89bcc0);
-//   background: linear-gradient(#8a5e90, #89bcc0);
-//   .fp-tableCell{
-//     img{
-//       position: relative;
-//       top: 70px;
-//       left: calc(50% - 56px);
-//     }
-//     h4{
-//       position: absolute;
-//       top: 150px;
-//       left: calc(50% - 40px);
-//     }
-//     h2{
-//       position: relative;
-//       top: 0px;
-//       left: 0px;
-//       text-align: center;
-//       margin: 0 0 0 -630px;
-//     }
-//     h1{
-//       line-height: 125px;
-//     }
-//     h3{
-//       position: relative;
-//       top: 0px;
-//       margin: 0 -800px 0 0;
-//     }
-//     h5{
-//       position: relative;
-//       top: 200px;
-//     }
-//     .arrow{
-
-//     }
-//   }
-// }
-
-// #section1 {
-//   background: -webkit-gradient(linear, top left, bottom left, from(#89bcc0), to(#969ac6));
-//   background: -webkit-linear-gradient(#89bcc0, #969ac6);
-//   background: linear-gradient(#89bcc0, #969ac6);
-// }
-
-
-// #section2 {
-//   background: -webkit-gradient(linear, top left, bottom left, from(#969ac6), to(#c93960));
-//   background: -webkit-linear-gradient(#969ac6, #c93960);
-//   background: linear-gradient(#969ac6, #c93960);
-// }
-
-
-
-
-

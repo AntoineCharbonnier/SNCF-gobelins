@@ -6,10 +6,6 @@
   .coffee__container{
     position: relative;
     height: 100%; 
-    // background: -webkit-gradient(linear, top left, bottom left, from(#8a5e90), to(#89bcc0));
-    // background: -webkit-linear-gradient(#8a5e90, #89bcc0);
-    // background: linear-gradient(#8a5e90, #89bcc0);
-    background-color : #89bcc0;
     display: table-cell;
     vertical-align : middle;
     .left__container{
@@ -46,27 +42,22 @@
         top: 90px;
         left: 220px;
         font : normal 400 50px "Merryweather";
-        // right: -400px;
       }
-
     }
     h6{
       position: relative;
       display: block;
       margin: 0 auto 0 auto ;
       width: 600px;
-      // left: 50%;
       top: 400px;
     }
     .coffee__svg{
       position: absolute;
-      // top: -185px;
       bottom: -100px;
       right:  0px;
       float: right;
       width: 1000px;
       z-index: 20;
-
     }
     .drop1{
       position: absolute;
@@ -98,3 +89,71 @@
     }
   }
 }
+
+
+@include desktop-and-below{
+  .coffee{
+    .coffee__container{
+      .left__container{
+        width: 60%;
+        top: calc(50% - 200px );
+        h2
+        {
+          width : 600px;
+          left: -40px;
+          margin: 0px auto 0 auto ;
+          top: 50px;
+          font-size: 40px;
+        }
+        h1
+        {
+          width : 100%;
+          line-height: 125px;
+          margin: 0px auto 0 auto ;
+          top: 80px;
+          font-size: 140px;
+        }
+        h3{
+          width : 320px;
+          margin: 0 auto 0 auto ;
+          top: 90px;
+          left: 220px;
+          font : normal 100 50px "Merryweather";
+        }
+      }
+      h6{
+        font-size: 16px;
+        margin: 0 auto 0 auto ;
+        width: 600px;
+        top: 260px;
+      }
+      .coffee__svg{
+        bottom: -100px;
+        right:  0px;
+        float: right;
+        width: 800px;
+      }
+      .drop1{
+        top: 235px;
+        right: 540px;
+      }
+      .drop2{
+        top: 210px;
+        right: 570px;
+      }
+      .spoon{
+        top: 200px;
+        right: 230px;
+        width: 150px;
+      }
+      .arrow{
+        width: 38px;
+        height: 22px;
+        top: 285px;
+        background: url("../img/intro/arrow.png");
+        margin: 0 auto ;
+      }
+    }
+  }
+}
+
