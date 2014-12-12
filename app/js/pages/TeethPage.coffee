@@ -17,7 +17,6 @@ class TeethPage extends BasePage
 
 
   hide: ->
-
     super()
 
     

@@ -2,7 +2,6 @@ class ClockAnimationPage
   constructor: (@container) ->
    
     @container = "#{@container}"
-    
     # @section = "#{@container} .section"
     @h2        = "#{@container} h2"
     @h1        = "#{@container} h1"
@@ -17,22 +16,18 @@ class ClockAnimationPage
     @path2     = "#{@container} #clockPath2"
     @path3     = "#{@container} #clockPath3"
     
-    # @spoon     = "#{@container} .spoon"
-    # @drop1     = "#{@container} .drop1"
-    # @drop2     = "#{@container} .drop2"
+
     @prepare() 
   
 
   prepare: ->
-    TweenMax.set [@container,@img,@drop1,@drop2], autoAlpha: 0
+    TweenMax.set @container, autoAlpha: 0
     TweenMax.set @h2, {perspective:400}
     TweenMax.set @h1, autoAlpha: 0
     TweenMax.set @h3,  autoAlpha: 0, x: 200
     TweenMax.set @h6,  autoAlpha: 0, y: 200
     TweenMax.set @arrow,  autoAlpha: 0, y: -100
-    # TweenMax.set @spoon,  autoAlpha: 0, y: -800,rotation:-30
-    # TweenMax.set @drop2, y: 50,x: 100
-    # TweenMax.set @drop2, y: 50,x: 50
+   
 
   show: ->
     t = 0
@@ -60,12 +55,8 @@ class ClockAnimationPage
     @tm.to(@path3, 0.5, {fill:"#F0F5E3", scale:1, opacity:1},t+=.5)
         # .staggerTo(@shapes, 0.5, {fill:"#EFEEEC", scale:1, opacity:1}, 0.2,t+=.5)
 
-    # @tm.to( @spoon, 1.5,{autoAlpha: 1,y: -15,rotation:700, ease: Ease.easeOut}, t+=.4)
-    # @tm.to( @drop2, .6,{autoAlpha: 1,y: 0,x: 0, ease: Ease.easeOut}, t+=1.3)
-    # @tm.to( @drop1, .3,{autoAlpha: 1,y: 0,x: 0, ease: Ease.easeOut}, t+=.3)
     @tm.to( @h6, .3,{autoAlpha: 1,y: 0, ease: Back.easeOut}, t+=.3)    
     @tm.to( @arrow, .8,{autoAlpha: 1,y: 0, ease: Back.easeOut}, t+=.2)
-    # @tm.to( @spoon, 1.5,{y: 15,x: -15,rotation:720, ease: Ease.easeOut}, t+=1.5)
 
     
     @tm.play()

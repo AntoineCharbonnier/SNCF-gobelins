@@ -24,6 +24,7 @@ class ScrollManager extends ScrollManagerSingleton
         @pagesOffsets.push page.offset
 
     window.addEventListener "mousewheel", @scroll, false
+    window.addEventListener "keydown", @keyControl, false
     @scroll()
 
   scroll:(e = null) =>
@@ -67,21 +68,25 @@ class ScrollManager extends ScrollManagerSingleton
           @index = @i
           @pages[@keyArray[@index]].show()
           console.log "UP"
+    @isFirstScroll = no
 
 
-
-
-
-    @isFirstScroll = no    
+  keyControl:(e = null) =>
+    e = window.event or e # old IE support
+    if  e.keyCode == 40
+      console.log "DOWN key"
+      if @index < @numberKeys-1
+          @pages[@keyArray[@index]].hide()
+          @i++
+          @index = @i
+          @pages[@keyArray[@index]].show()
+    if  e.keyCode == 38
+      console.log "UP key"
+      if @index != 0
+          @pages[@keyArray[@index]].hide()
+          @i--
+          @index = @i
+          @pages[@keyArray[@index]].show()
     
-
-
-
-
-
-
-
-
-
 
 module.exports = ScrollManager

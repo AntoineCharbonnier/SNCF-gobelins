@@ -11,11 +11,7 @@ class TransiliensAnimationPage
     @h5          = "#{@container} h5"
     @arrow       = "#{@container} .arrow"
     
-
-
-
     @prepare() 
-  
 
   prepare: ->
     TweenMax.set [@container,@img], autoAlpha: 0
@@ -26,8 +22,6 @@ class TransiliensAnimationPage
     TweenMax.set @h3,  autoAlpha: 0, x: 200
     TweenMax.set @h5,  autoAlpha: 0, y: 200
     TweenMax.set @arrow,  autoAlpha: 0, y: -100
-
-
 
   show: ->
     t = 0
@@ -52,7 +46,6 @@ class TransiliensAnimationPage
     @tm.to( @h5, .8,{autoAlpha: 1,y: 0, ease: Back.easeOut}, t+=.2)
     @tm.to( @arrow, .8,{autoAlpha: 1,y: 0, ease: Back.easeOut}, t+=.2)
     
-   
 
     @tm.play()
 
