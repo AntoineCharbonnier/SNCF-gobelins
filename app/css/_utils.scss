@@ -6,6 +6,10 @@ html,body{
   padding: 0;
 }
 
+html,body{
+  background: #89bcc0;
+}
+
 img {
   display: block;
 }
@@ -65,4 +69,41 @@ a{
 .clear{
   clear: both;
   display: block;
+}
+
+
+
+@include desktop-and-below{
+  h1{
+    font : normal 700 100px "Avenir";
+  }
+
+  h2{
+    font : normal 500 80px "GeorgiaItalic";
+  }
+
+  h3{
+    font : normal 500 50px "Merryweather";
+  }
+
+  h4{
+    font : normal 400 14px "Avenir";
+   
+  }
+
+  h5{
+    font : normal 500 20px "Avenir";
+  }
+  h6{
+    font : normal 500 140px "Avenir";
+    padding : 15px 20px;
+  }
+
+  p{
+    font : normal 400 15px "Avenir";
+  }
+
+  a{
+    font : normal 700 20px "Merryweather";
+  }
 }

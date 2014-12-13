@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="bigger__container">
-      <div data-scroll-offset="0" class="transiliens">
+      <div class="transiliens">
         <div class="section transiliens__container"><img src="img/SNCF-logo.png" alt="Logo-SNCF">
           <h4>présente</h4>
           <h2>Les</h2>
@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="bigger__container">
-      <div data-scroll-offset="500" class="coffee">
+      <div class="coffee">
         <div class="section coffee__container">
           <div class="left__container">
             <h2>Avez-vous eu <br> le temps de boire votre</h2>
@@ -131,7 +131,7 @@
           <h1>économies</h1>
           <h3>sur vos billets.</h3>
           <div class="select__box">
-            <h4>Choisissez votre ligne : </h4>
+            <h4 class="choose">Choisissez votre ligne : </h4>
             <ul>
               <li class="title">Ligne ----</li>
               <li>A</li>
@@ -139,7 +139,7 @@
               <li>C</li>
               <li>D</li>
             </ul>
-            <h4>OK</h4>
+            <h4 class="ok">OK</h4>
           </div>
           <p>
             Cet outil vous permet de vous renseigner sur les temps d’affluence de votre ligne pour vous éviter de prendre les transports pendant les heures de pointe.<br>
@@ -153,12 +153,12 @@
       <div class="data">
         <div class="section data__container">
           <div class="left--side">
-            <h2>Ligne n° <span class="line--number">115</span></h2>
-            <h4>Alfort &gt; Menilmontant</h4>
+            <h2 class="selected--line">Ligne n° <span class="line--number">115</span></h2>
+            <h4 class="direction">Alfort - Menilmontant</h4>
           </div>
           <div class="right--side">  
             <div class="select__box">
-              <h4>Choisissez votre ligne : </h4>
+              <h4 class="choose">Choisissez votre ligne : </h4>
               <ul>
                 <li class="title">Ligne ----</li>
                 <li>A</li>
@@ -166,21 +166,21 @@
                 <li>C</li>
                 <li>D</li>
               </ul>
-              <h4>OK</h4>
+              <h4 class="ok">OK</h4>
             </div>
           </div>
           <div class="timeline__container"><img src="img/slider-tmp.png" alt="Slider"></div>
           <div class="impact__container">
             <div class="impact--affluence"><img src="img/Data_Illu_png/affluence_1.png" alt="Affluence">
-              <h2>Affluence</h2>
+              <h2 class="impact--subtitle">Affluence</h2>
               <h2 class="count">88<span class="percent--style">%</span> </h2>
             </div>
             <div class="impact--saving"><img src="img/Data_Illu_png/illus_economie_1.png" alt="Economie">
-              <h2>Economie</h2>
+              <h2 class="impact--subtitle">Economie</h2>
               <h2 class="count">0<span class="percent--style">%</span> </h2>
             </div>
             <div class="impact--stress"><img src="img/Data_Illu_png/illus_stress-2.png" alt="Stress">
-              <h2>Stress</h2>
+              <h2 class="impact--subtitle">Stress</h2>
               <h2 class="count"><span class="more--style">+</span> 150<span class="percent--style">%</span> </h2>
             </div>
           </div>
@@ -190,6 +190,9 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js">  </script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <script src="http://antoinecharbonnier.fr/GreenSock-ShockinglyGreen-js/src/uncompressed/utils/SplitText.js"></script>
+    <script src="http://antoinecharbonnier.fr/GreenSock-ShockinglyGreen-js/src/uncompressed/plugins/ScrambleTextPlugin.js"></script>
+    <script src="http://antoinecharbonnier.fr/GreenSock-ShockinglyGreen-js/src/uncompressed/plugins/DrawSVGPlugin.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

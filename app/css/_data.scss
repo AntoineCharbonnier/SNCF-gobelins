@@ -28,9 +28,6 @@
         font : normal 700 100px "Avenir";
         width : 100%;
         position: relative;
-        // line-height: 125px;
-        // margin: 0px auto 0 auto ;
-        // top: -90px;
       }
       h4{
         font : normal 400 40px "Avenir";
@@ -39,7 +36,6 @@
         position: relative;
         margin: 0 auto 0 auto ;
         top: -110px;
-        // right: -345px;
       }
     }
     .right--side{
@@ -49,8 +45,6 @@
       height: 300px;
       top: -150px;
     }
-    
-    
     .select__box{
       position: relative;
       width: 584px;
@@ -84,7 +78,6 @@
         width: 200px;
         height: 70px;
         vertical-align: middle;
-        
         li{
           opacity: 0;
           position: relative;
@@ -170,6 +163,138 @@
         img{
           width:168.5px ;
           height: 168.5px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+@include desktop-and-below{
+  .data{
+    .data__container{
+      .left--side{
+        height: 300px;
+        top: 20px;
+        h2{
+          font : normal 500 40px "GeorgiaItalic";
+          left: 250px;
+          margin: 0px auto 0 -315px ;
+          top: -100px;
+        }
+        .line--number{
+          font : normal 700 100px "Avenir";
+        }
+        h4{
+          font : normal 400 20px "Avenir";
+          width : 520px;
+          margin: 0 auto 0 auto ;
+          top: -110px;
+        }
+      }
+      .right--side{
+        width: 50%;
+        height: 300px;
+        top: -60px;
+      }
+      .select__box{
+        width: 584px;
+        height: 50px;
+        margin: 0 auto;
+        h4{
+          width: 210px;
+          border : 1px solid white;
+          padding : 10px 20px;
+          font-size : 20px;
+          &:last-child{
+            padding : 10px 20px;
+            width: 50px;
+            left: -5px;
+            font : normal 500 20px "Avenir";
+          }
+        }
+        ul{
+          padding : 10px 20px;
+          font : normal 400 20px "Avenir";
+          margin: 20px auto 0 auto ;
+          width: 200px;
+          height: 70px;
+          font-size : 20px;
+          li{
+            top: -30px;
+            left: -20px;
+            padding : 10px 20px;
+            margin: 0 0 1px 0;
+            border : 1px solid white;
+            width: 195px;
+            font-size : 20px;
+          }
+          li.title{
+            background:url("../img/intro/arrow-little.png") no-repeat right transparent;
+            border-top : 1px solid white;
+            border-bottom: 1px solid white;
+            border-left : 0px;
+            border-right : 0px;
+            font-size : 20px;
+          }
+        }
+      }
+      .timeline__container{
+        height: 65px;
+        top: 0px;
+        img{
+          top: 130px;
+          left: calc( 50% - 555px);
+        }
+      }
+      .impact__container{
+        width: 50%;
+        margin: 0 auto; 
+        img{
+          margin: 0 auto;
+        }
+        h2{
+          font : normal 400 15px "GeorgiaItalic";
+        }
+        h2.count{
+          font : normal 500 40px "GeorgiaItalic";
+        }
+        .percent--style{
+          font : normal 400 15px "GeorgiaItalic";
+        }
+        .more--style{
+          font : normal 400 25px "GeorgiaItalic";
+        }
+        .impact--affluence{
+          width: 33%;
+          margin: 0 auto;
+          img{
+            width: 131px;
+            height: 84.25px;
+          }
+        }
+        .impact--saving{
+          width: 33%;
+          margin: 0 auto;
+          img{
+            width: 84.25px;
+            height: 84.25px;
+          }
+        }
+        .impact--stress{
+          width: 33%;
+          margin: 0 auto;
+          img{
+            width:84.25px ;
+            height: 84.25px;
+          }
         }
       }
     }
