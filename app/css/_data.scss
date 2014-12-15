@@ -13,7 +13,7 @@
       width: 50%;
       float: left;
       height: 300px;
-      top: -150px;
+      top: -80px;
       h2{
         font : normal 500 70px "GeorgiaItalic";
         position: relative;
@@ -101,13 +101,31 @@
     .timeline__container{
       position: relative;
       height: 65px;
-      width: 100%;
+      width: 50%;
+      margin : 0 auto;
       top: 0px;
-      img{
-        position: absolute;
-        display: block;
-        top: 130px;
-        left: calc( 50% - 555px);
+      form,fieldset{
+        margin: 0;
+        padding: 0;
+        a.ui-slider-handle .ui-state-default .ui-corner-all{
+          border: 5px solid white;
+          color: #89bcc0;
+          background-color: #89bcc0;
+          width: 20px;
+          height: 20px;
+          margin: 0;
+          padding: 0;
+          border-radius : 800px;
+          outline: none;
+          text-decoration: none;
+        }
+        ol{
+          top: 18px;
+          li{
+            margin-top: 5px;
+            color: white;
+          }
+        }
       }
     }
     .impact__container{
