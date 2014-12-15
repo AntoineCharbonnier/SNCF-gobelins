@@ -75,7 +75,7 @@ gulp.task('default', ['clean'], function() {
 gulp.task('connect', ['default'], function() {
   return gp.connect.server({
     root: 'www',
-    port: 9000,
+    port: 3000,
     livereload: true
   });
 });
