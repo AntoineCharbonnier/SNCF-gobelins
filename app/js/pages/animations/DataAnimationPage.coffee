@@ -22,6 +22,8 @@ class DataAnimationPage
     @h2StressCount        = "#{@container} .impact--stress  h2.count"    
     @prepare() 
 
+    @updatePercent(13,1,13)
+
   prepare: ->
     TweenMax.set @container, autoAlpha: 0
     TweenMax.set @h4Direction, {perspective:400},autoAlpha: 0
@@ -79,8 +81,18 @@ class DataAnimationPage
     
 
     @tm.play()
-
+    # @updatePercent(13,1,13)
   hide: ->
     @tm.reverse()
+
+  updatePercent: (@affluence,@saving,@stress) ->
+    console.log "UPDATE PERCENT"
+    t = 0
+    @tm = new TimelineMax paused: true
+    @tm.to(@h2AffluenceCount, 1,autoAlpha: 1, scrambleText:{text:@affluence+"%", chars:"0123456789", revealDelay:0.5, tweenLength:false, ease:Linear.easeNone},t+=.5)
+    @tm.to(@h2SavingCount, 1,autoAlpha: 1, scrambleText:{text:"-"+@saving+"%", chars:"0123456789", revealDelay:0.5, tweenLength:false, ease:Linear.easeNone},t+=.5)
+    @tm.to(@h2StressCount, 1,autoAlpha: 1, scrambleText:{text:"+"+@stress+"%", chars:"0123456789", revealDelay:0.5, tweenLength:false, ease:Linear.easeNone},t+=.5)
+    @tm.play()
+
 
 module.exports = DataAnimationPage

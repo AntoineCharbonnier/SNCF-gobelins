@@ -19,7 +19,15 @@ class App
     
   
     @gare
-    @heure
+    @realHour
+    @numberPeopleInHour
+    @numberTotalPassenger
+    @percentPerson
+
+    @percentAffluence
+    @percentSaving
+    @percentStress
+
 
     @scrollManager.addPages @pages,@scrollManager.i
 
@@ -31,7 +39,7 @@ class App
         labels: 9
         sliderOptions:
           change: (e, ui) ->
-            console.log "hey" + ui.value + "    " + $("select#valueA").val()
+            # console.log "hey" + ui.value + "    " + $("select#valueA").val()
             return
       return
 
@@ -68,63 +76,109 @@ class App
         p.hideDropDown()
         p.startFrom = 0
         p.repaint()
-        console.log p.input.value
+        
+        # console.log p.input.value
         @valueText = p.input.value
-        console.log @valueText
+        # console.log @valueText
+        
+        # request3 = new XMLHttpRequest()
+        # console.log "on request 3",@gare
+        # request3.open "GET", "http://anarchy.rayanmestiri.com/ecs/"+@valueText, true
+        # request3.onload = (e) ->
+        #   console.log "passenger ",@numberTotalPassenger
+        #   if @numberTotalPassenger
+        #     console.log "EXIST",@numberTotalPassenger
+        #   tmp = JSON.parse(request3.response)
+        #   if tmp > 0 
+        #     @numberTotalPassenger = tmp
+        #     console.log "tmp >0",@numberTotalPassenger
+        #   # @percentPerson = (@numberPeopleInHour/@numberTotalPassenger)*100
+        #   # console.log "numberTotalPassenger",@numberTotalPassenger
+        # request3.send()
               
       p.input.maxLength = 50 # limit the max number of characters in the input text
       p.hideDropDown()
+
       return
 
     request.send()
 
+
+
+
+
     #@requestManager = (require './RequestManager').get()  
-    $(".ok").click ->
+    $(".ok").click =>
      # @requestManager = (require './RequestManager').get() 
      # console.log @requestManager
      # @requestManager.getStations()
-      console.log "value OK",$(".textInput").val()
-      console.log $("select#valueA").val()
+      # console.log "value OK",$(".textInput").val()
+      # console.log $("select#valueA").val()
 
       request = new XMLHttpRequest()
-      request.open "GET", "http://anarchy.rayanmestiri.com/ecs-name/all", true
-      request.onload = (e) ->
+      request.open "GET", "http://anarchy.rayanmestiri.com/ecs-name/all", false
+      request.onreadystatechange = (e) =>
         ecsName = JSON.parse(request.response)
         stations = []
-
         $.each ecsName, (index, item) ->
-          #console.log index, item
           stations.push
             ecs: index
             name: item
         i = 0
         while i < stations.length
-          # console.log stations[i].name
           if(stations[i].name ==$(".textInput").val())
-            console.log "Find",stations[i].name
             @gare = stations[i].ecs
-            console.log "THE GARE ECS",@gare,"     TIME",$("select#valueA").val()
-            
             reg = new RegExp("[ :]+", "g")
             tab = $("select#valueA").val().split(reg)
             console.log parseInt(tab[0])
             hour = parseInt(tab[0])
             if(hour<10)
-              realHour = "0"+hour
-              console.log realHour
+              @realHour = "0"+hour
+              console.log "REAL HOUR",@realHour
             else
-              realHour = hour
-            #final request
-            request2 = new XMLHttpRequest()
-            request2.open "GET", "http://anarchy.rayanmestiri.com/ecs-time/"+@gare+"/"+realHour, true
-            request2.onload = (e) ->
-              numberPeopleInHour = JSON.parse(request2.response)
-              console.log numberPeopleInHour
-            request2.send()
-
-          i++
+              @realHour = hour
+          i++   
+        if request.readyState==4 && request.status==200
+          console.log "SUCESS"
+          request2 = new XMLHttpRequest()
+          request2.open "GET", "http://anarchy.rayanmestiri.com/ecs-time/"+@gare+"/"+@realHour, false
+          request2.onreadystatechange = (e) =>
+            @numberPeopleInHour = JSON.parse(request2.response)
+            if request2.readyState==4 && request2.status==200
+              request3 = new XMLHttpRequest()
+              request3.open "GET", "http://anarchy.rayanmestiri.com/ecs/"+@gare, false
+              request3.onreadystatechange = (e) =>
+                @numberTotalPassenger = JSON.parse(request3.response)
+              request3.send()
+          request2.send()
+          
+          
       request.send()
-      
+
+      console.log "at the end", @numberPeopleInHour,"  ",@numberTotalPassenger," percent : ",Math.round((@numberPeopleInHour/@numberTotalPassenger)*100)
+      @percentPerson = Math.round((@numberPeopleInHour/@numberTotalPassenger)*100)
+
+      if @percentPerson <= 10
+        @percentAffluence = Math.round(@percentPerson)
+        @percentSaving = 50
+        @percentStress= 0
+
+      if @percentPerson >10
+        @percentAffluence = Math.round(@percentPerson*2.15)
+        @percentSaving = 20
+        @percentStress= Math.round(@percentPerson*2.33)
+
+      if @percentPerson >15
+        @percentAffluence = @percentPerson*3
+        @percentSaving = 0
+        @percentStress= @percentPerson*5
+
+      console.log "affluence : ",@percentAffluence," saving : ",@percentSaving," stress : ",@percentStress
+      # console.log @pages
+      @pages[PagesTypes.DATA].updatePercent(@percentAffluence,@percentSaving,@percentStress)
+
+
+
   resize: ->
 
 

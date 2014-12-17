@@ -20,7 +20,9 @@ class DataPage extends BasePage
 
     super()
 
-    
+  updatePercent:(@affluence,@saving,@stress) ->
+  	console.log "[DataPage update]"
+  	@animationClass.updatePercent(@affluence,@saving,@stress)
 
 module.exports = DataPage
   
