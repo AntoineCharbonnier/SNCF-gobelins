@@ -23,6 +23,10 @@ class DataPage extends BasePage
   updatePercent:(@affluence,@saving,@stress) ->
   	console.log "[DataPage update]"
   	@animationClass.updatePercent(@affluence,@saving,@stress)
+  
+  updateImg:(@affluence,@saving,@stress) ->
+    console.log "[DataPage img]"
+    @animationClass.updateImg(@affluence,@saving,@stress)
 
 module.exports = DataPage
   

@@ -25,6 +25,12 @@ class ScrollManager extends ScrollManagerSingleton
 
     window.addEventListener "mousewheel", @scroll, false
     window.addEventListener "keydown", @keyControl, false
+    @classname = document.getElementsByClassName("arrow")
+    i = 0
+
+    while i < @classname.length-1
+      @classname[i].addEventListener "click", @arrowClicked, false
+      i++
     @scroll()
 
   scroll:(e = null) =>
@@ -87,6 +93,12 @@ class ScrollManager extends ScrollManagerSingleton
           @i--
           @index = @i
           @pages[@keyArray[@index]].show()
-    
+
+  arrowClicked:(e)=>
+    console.log "ARROW CLICK"
+    @pages[@keyArray[@index]].hide()
+    @i++
+    @index = @i
+    @pages[@keyArray[@index]].show()
 
 module.exports = ScrollManager

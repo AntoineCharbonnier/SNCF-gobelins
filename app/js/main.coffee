@@ -28,6 +28,10 @@ class App
     @percentSaving
     @percentStress
 
+    @affluenceImg
+    @savingImg
+    @stressImg
+
 
     @scrollManager.addPages @pages,@scrollManager.i
 
@@ -158,24 +162,60 @@ class App
       console.log "at the end", @numberPeopleInHour,"  ",@numberTotalPassenger," percent : ",Math.round((@numberPeopleInHour/@numberTotalPassenger)*100)
       @percentPerson = Math.round((@numberPeopleInHour/@numberTotalPassenger)*100)
 
-      if @percentPerson <= 10
-        @percentAffluence = Math.round(@percentPerson)
+      #easing data from reality experiences
+      if @numberTotalPassenger > 10000
+        @easingSwitchLotPeople = Math.round(0+Math.random() * (5 - 1) + 1)
+
+      if @numberTotalPassenger > 20000
+        @easingSwitchLotPeople = Math.round(0+Math.random() * (10 - 4) + 4)
+      
+      if @numberTotalPassenger > 40000
+        @easingSwitchLotPeople = Math.round(0+Math.random() * (20 - 8) + 8)
+
+      if @numberTotalPassenger > 50000
+        @easingSwitchLotPeople = Math.round(0+Math.random() * (50 - 20) + 20)
+
+
+      #calculate values from data
+      if @percentPerson <= 8
+        @percentAffluence = Math.round(@percentPerson)+@easingSwitchLotPeople
         @percentSaving = 50
-        @percentStress= 0
+        @percentStress= Math.round(0+Math.random() * (8 - 2) + 2)+@easingSwitchLotPeople
+
+      if @percentPerson >8
+        @percentAffluence = Math.round(@percentPerson*2.15)+@easingSwitchLotPeople
+        @percentSaving = 20
+        @percentStress= Math.round(@percentPerson*2.33+Math.random() * (8 - 2) + 2)+@easingSwitchLotPeople
 
       if @percentPerson >10
-        @percentAffluence = Math.round(@percentPerson*2.15)
-        @percentSaving = 20
-        @percentStress= Math.round(@percentPerson*2.33)
+        @percentAffluence = Math.round(@percentPerson*2.15)+@easingSwitchLotPeople
+        @percentSaving = 5
+        @percentStress= Math.round(@percentPerson*2.33+Math.random() * (8 - 2) + 2)+@easingSwitchLotPeople
 
       if @percentPerson >15
-        @percentAffluence = @percentPerson*3
+        @percentAffluence = @percentPerson*3+@easingSwitchLotPeople
         @percentSaving = 0
-        @percentStress= @percentPerson*5
+        @percentStress= Math.round(@percentPerson*5+Math.random() * (40 - 15) + 15)+@easingSwitchLotPeople
+
+      @affluenceImg = switch
+        when 0<= @percentAffluence < 20 then 1
+        when 20<= @percentAffluence < 50  then 2
+        when 50<= @percentAffluence then 3
+
+      @savingImg = switch
+        when 0<= @percentSaving < 20 then 1
+        when 20<= @percentSaving < 50  then 2
+        when 50<= @percentSaving then 3
+
+      @stressImg = switch
+        when 0<= @percentStress < 20 then 1
+        when 20<= @percentStress < 50  then 2
+        when 50<= @percentStress then 3
 
       console.log "affluence : ",@percentAffluence," saving : ",@percentSaving," stress : ",@percentStress
       # console.log @pages
       @pages[PagesTypes.DATA].updatePercent(@percentAffluence,@percentSaving,@percentStress)
+      @pages[PagesTypes.DATA].updateImg(@affluenceImg,@savingImg,@stressImg)
 
 
 

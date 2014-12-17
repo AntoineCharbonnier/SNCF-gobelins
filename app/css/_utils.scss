@@ -70,7 +70,10 @@ a{
   clear: both;
   display: block;
 }
-
+.arrow{
+  z-index: 1000;
+  cursor: pointer;
+}
 
 
 @include desktop-and-below{
