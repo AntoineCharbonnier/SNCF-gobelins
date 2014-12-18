@@ -1,9 +1,9 @@
-.transiliens{
+.quizz{
   width: 100%;
   height: 100%;
   display: table;
   z-index: 0;
-  .transiliens__container{
+  .quizz__container{
     position: relative;
     height: 100%; 
     background-color : #8a5e90;
@@ -71,8 +71,8 @@
 
 
 @include desktop-and-below{
-  .transiliens{
-    .transiliens__container{
+  .quizz{
+    .quizz__container{
       img{
         width: 113px;
         top: 0px;
@@ -118,8 +118,8 @@
 }
 
 @include big-screen{
-  .transiliens{
-    .transiliens__container{
+  .quizz{
+    .quizz__container{
       img{
         width: 113px;
         top: 0px;
@@ -131,7 +131,7 @@
         }
       h2
       {
-        left: 0px;
+        left: 90px;
         margin: 0px auto 0 -315px ;
         top: 70px;
       }
@@ -156,7 +156,7 @@
       .arrow{
         width: 38px;
         height: 22px;
-        top: 230px;
+        top: 330px;
         background: url("../img/intro/arrow.png");
         margin: 0 auto ;
       }
@@ -164,8 +164,8 @@
   }
 }
 @include tablet-landscape-and-below {
-  .transiliens{
-    .transiliens__container{
+  .quizz{
+    .quizz__container{
       img{
         width: 113px;
         top: 0px;

@@ -15,6 +15,8 @@ class App
     @pages[PagesTypes.TRAVEL]      = new (require './pages/TravelPage')()
     @pages[PagesTypes.SAVING]      = new (require './pages/SavingPage')()
     @pages[PagesTypes.DATA]        = new (require './pages/DataPage')()
+    @pages[PagesTypes.QUIZZ]       = new (require './pages/QuizzPage')()
+    @pages[PagesTypes.OPTICAL]     = new (require './pages/OpticalPage')()
 
     
   

@@ -93,5 +93,6 @@ class SavingAnimationPage
     @tm.play()
   hide: ->
     @tm.reverse()
+    TweenMax.set @arrow,  autoAlpha: 0, y: -100
 
 module.exports = SavingAnimationPage

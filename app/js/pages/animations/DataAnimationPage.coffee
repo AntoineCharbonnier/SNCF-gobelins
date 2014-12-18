@@ -25,6 +25,8 @@ class DataAnimationPage
     @SavingImg        = "#{@container} .impact--saving  img"
     @StressImg        = "#{@container} .impact--stress  img" 
 
+    @arrow            = "#{@container} .arrow"
+
     @skip = ".skip"
 
     @prepare() 
@@ -49,6 +51,7 @@ class DataAnimationPage
     TweenMax.set @AffluenceImg, x: -300
     TweenMax.set @StressImg, x: 300
     TweenMax.set @SavingImg, y: -100
+    TweenMax.set @arrow,  autoAlpha: 0, y: -100
 
 
 
@@ -92,7 +95,8 @@ class DataAnimationPage
 
     @tm.to(@AffluenceImg,1,{autoAlpha: 1,x: 0,ease: Back.easeOut},t+=.1)    
     @tm.to(@StressImg,1,{autoAlpha: 1,x: 0,ease: Back.easeOut},t+=.1)    
-    @tm.to(@SavingImg,1,{autoAlpha: 1,y: 0,ease: Back.easeOut},t+=.1)    
+    @tm.to(@SavingImg,1,{autoAlpha: 1,y: 0,ease: Back.easeOut},t+=.1)
+    @tm.to( @arrow, .8,{autoAlpha: 1,y: 0, ease: Back.easeOut}, t+=.2)    
     
 
     @tm.play()

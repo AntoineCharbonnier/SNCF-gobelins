@@ -402,9 +402,9 @@
         top: 20px;
         h2{
           font : normal 500 40px "GeorgiaItalic";
-          left: 250px;
+          left: 300px;
           margin: 0px auto 0 -315px ;
-          top: -100px;
+          top: -80px;
         }
         .line--number{
           font : normal 700 100px "Avenir";
@@ -434,7 +434,7 @@
           &:last-child{
             padding : 10px 20px;
             width: 50px;
-            left: -5px;
+            left: -6px;
             font : normal 500 20px "Avenir";
           }
         }
@@ -495,13 +495,14 @@
         }
       }
       .impact__container{
-        width: 50%;
+        width: 60%;
         margin: 0 auto; 
+        left: 95px;
         img{
           margin: 0 auto;
         }
         h2{
-          font : normal 400 15px "GeorgiaItalic";
+          font : normal 400 25px "GeorgiaItalic";
         }
         h2.count{
           font : normal 500 40px "GeorgiaItalic";
@@ -516,30 +517,30 @@
           width: 33%;
           margin: 0 auto;
           img{
-            top: -10px;
-            left: -20px;
-            width: 100px;
-            height: 100px;
+            top: -30px;
+            left: -60px;
+            width: 140px;
+            height: 140px;
           }
         }
         .impact--saving{
           width: 33%;
           margin: 0 auto;
           img{
-            top: -10px;
-            left: -20px;
-            width: 100px;
-            height: 100px;
+            top: -30px;
+            left: -60px;
+            width: 140px;
+            height: 140px;
           }
         }
         .impact--stress{
           width: 33%;
           margin: 0 auto;
           img{
-            top: -10px;
-            left: -20px;
-            width:100px ;
-            height: 100px;
+            top: -30px;
+            left: -60px;
+            width:140px ;
+            height: 140px;
           }
         }
       }

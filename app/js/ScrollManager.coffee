@@ -10,7 +10,7 @@ class ScrollManager extends ScrollManagerSingleton
     
     @index        = -1
     @pagesOffsets = []
-    @keyArray     = [PagesTypes.TRANSILIENS, PagesTypes.COFFEE,PagesTypes.CLOCK, PagesTypes.TEETH,PagesTypes.SOLUTION, PagesTypes.TRAVEL , PagesTypes.SAVING,PagesTypes.DATA]
+    @keyArray     = [PagesTypes.TRANSILIENS, PagesTypes.COFFEE,PagesTypes.CLOCK, PagesTypes.TEETH,PagesTypes.SOLUTION, PagesTypes.TRAVEL , PagesTypes.SAVING,PagesTypes.DATA,PagesTypes.QUIZZ,PagesTypes.OPTICAL]
     @classname = document.getElementsByClassName("arrow")
     @skip = document.getElementsByClassName("skip")
     @i = 0

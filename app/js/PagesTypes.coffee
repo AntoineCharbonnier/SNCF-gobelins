@@ -8,6 +8,8 @@ class PagesTypes
   @TRAVEL      = 'travel'
   @SAVING      = 'saving'
   @DATA        = 'data'
+  @QUIZZ       = 'quizz'
+  @OPTICAL     = 'optical'
 
 
   constructor: ->
