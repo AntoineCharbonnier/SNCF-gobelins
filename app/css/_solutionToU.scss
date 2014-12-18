@@ -5,13 +5,9 @@
   .solutionToU__container{
     position: relative;
     height: 100%; 
-    // background: -webkit-gradient(linear, top left, bottom left, from(#8a5e90), to(#89bcc0));
-    // background: -webkit-linear-gradient(#8a5e90, #89bcc0);
-    // background: linear-gradient(#8a5e90, #89bcc0);
     background-color : #8a5e90;
     display: table-cell;
     vertical-align : middle;
-
     h2
     {
       position: relative;
@@ -38,7 +34,6 @@
       top: 40px;
       right: -400px;
     }
-   
     .arrow{
       position: absolute;
       display: block;
@@ -49,8 +44,37 @@
       @include transform(rotate(-90deg));
       background: url("../img/intro/arrow.png");
       margin: 0 auto ;
-      // bottom: -50px;
     }
+  }
+}
 
+@include tablet-landscape-and-below {
+  .solutionToU{
+    .solutionToU__container{
+      h2
+      {
+        left: 30px;
+        margin: 0px auto 0 -315px ;
+        top: 0px;
+      }
+      h1
+      {
+        line-height: 125px;
+        margin: 0px auto 0 auto ;
+        top: 0px;
+      }
+      h3{
+        width : 370px;
+        top: 0px;
+        right: -250px;
+      }
+      .arrow{
+        top: 50%;
+        right: 30px;
+        @include transform(rotate(-90deg));
+        background: url("../img/intro/arrow.png");
+        margin: 0 auto ;
+      }
+    }
   }
 }

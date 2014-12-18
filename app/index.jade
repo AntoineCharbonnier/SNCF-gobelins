@@ -101,6 +101,7 @@ html(lang="fr")
           h1 économies
           h3 sur vos billets.
           
+          img(src="img/train.png" alt="Train")
           //.select__box
           //  h4.choose Choisissez votre ligne : 
           //  ul 
@@ -119,7 +120,7 @@ html(lang="fr")
       .data
         .section.data__container
           .left--side 
-            h2.selected--line Ligne n° <span class="line--number">115</span>
+            h2.selected--line Gare : <span class="line--number">---</span>
             //-h4.direction Alfort - Menilmontant
           .right--side   
             .select__box
@@ -131,7 +132,6 @@ html(lang="fr")
               h4.ok OK
 
           .timeline__container
-            //- img(src="img/slider-tmp.png" alt="Slider")
             form(action='#')
               fieldset
                 select#valueA(name='valueA', style='display: none')

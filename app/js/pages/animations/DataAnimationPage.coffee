@@ -142,4 +142,22 @@ class DataAnimationPage
 
     @tm.play()
 
+  updateGare:(@gare)->
+    console.log "ANIM GARE"
+    mySplitTextH2 = new SplitText(@h2, {type:"words,chars"})
+    charsH2 = mySplitTextH2.chars
+
+    t = 0
+    @tm = new TimelineMax paused: true
+    @tm.to(@h2,.2,{autoAlpha:0,ease: Ease.easeIn},t+=.2)
+    $(@h2).html(@gare)
+    @tm.to(@h2,.2,{autoAlpha:1,x:-2,ease: Ease.easeIn},t+=1)
+    @tm.to(@h2,.2,{x:2,ease: Ease.easeIn},t+=.2)
+    @tm.to(@h2,.2,{x:-2,ease: Ease.easeIn},t+=.2)
+    @tm.to(@h2,.2,{x:0,ease: Ease.easeIn},t+=.2)
+    # @tm.staggerFrom(charsH2, 0.8,autoAlpha: 1,scale: 0,y: 80,rotationX: 180,transformOrigin: "0% -50% 50",ease: Back.easeOut, 0.01, t+=.8)
+
+    @tm.play()
+    
+
 module.exports = DataAnimationPage

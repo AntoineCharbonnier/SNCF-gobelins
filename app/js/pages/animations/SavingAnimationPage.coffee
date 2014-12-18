@@ -11,6 +11,7 @@ class SavingAnimationPage
     @arrow           = "#{@container} .arrow"
     @p               = "#{@container} p"
     
+    @img             = "#{@container} img"
     #@selectBoxChoose = "#{@container} .select__box .choose"
     #@selectBoxOk     = "#{@container} .select__box .ok"
     #@selectBoxLI     = "#{@container} .select__box li"
@@ -27,6 +28,8 @@ class SavingAnimationPage
     TweenMax.set @h3,  autoAlpha: 0, x: 200
     TweenMax.set @h5,  autoAlpha: 0, y: 200
     TweenMax.set @arrow,  autoAlpha: 0, y: -100
+
+    TweenMax.set @img, x: -1000,scaleX: 1
 
     #TweenMax.set @selectBoxChoose, autoAlpha: 0
     #TweenMax.set @selectBoxOk, autoAlpha: 0
@@ -78,6 +81,16 @@ class SavingAnimationPage
 
     @tm.play()
 
+    @trainLoop()
+  trainLoop: ->
+    t = 0
+    @tm = new TimelineMax paused: true, repeat: -1, yoyo: false, repeatDelay: 1.0
+    @tm.to(@img,3,{x: 2000,ease: Ease.easeIn},t+=3)
+    @tm.set(@img,{scaleX:1,ease: Ease.easeIn},t+=.2)
+    @tm.to(@img,3,{x: -2000,ease: Ease.easeIn},t+=3)
+    @tm.set(@img,{scaleX: -1,ease: Ease.easeIn},t+=.2)
+
+    @tm.play()
   hide: ->
     @tm.reverse()
 

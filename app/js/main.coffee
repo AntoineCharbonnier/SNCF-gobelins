@@ -117,6 +117,7 @@ class App
         while i < stations.length
           if(stations[i].name ==$(".textInput").val())
             @gare = stations[i].ecs
+            @gareName = stations[i].name
             reg = new RegExp("[ :]+", "g")
             tab = $("select#valueA").val().split(reg)
             #console.log parseInt(tab[0])
@@ -144,6 +145,7 @@ class App
           
       request.send()
 
+      console.log "GARE",@gareName
       #console.log "at the end", @numberPeopleInHour,"  ",@numberTotalPassenger," percent : ",Math.round((@numberPeopleInHour/@numberTotalPassenger)*100)
       @percentPerson = Math.round((@numberPeopleInHour/@numberTotalPassenger)*100)
 
@@ -188,8 +190,8 @@ class App
         when 50<= @percentAffluence then 3
 
       @savingImg = switch
-        when 0<= @percentSaving < 20 then 1
-        when 20<= @percentSaving < 50  then 2
+        when 0<= @percentSaving < 30 then 1
+        when 30<= @percentSaving < 50  then 2
         when 50<= @percentSaving then 3
 
       @stressImg = switch
@@ -201,6 +203,7 @@ class App
       # console.log @pages
       @pages[PagesTypes.DATA].updatePercent(@percentAffluence,@percentSaving,@percentStress)
       @pages[PagesTypes.DATA].updateImg(@affluenceImg,@savingImg,@stressImg)
+      @pages[PagesTypes.DATA].updateGare(@gareName)
 
 
 

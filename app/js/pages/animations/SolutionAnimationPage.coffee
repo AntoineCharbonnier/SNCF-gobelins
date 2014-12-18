@@ -28,10 +28,10 @@ class SolutionAnimationPage
     #Split Text
     mySplitTextH2 = new SplitText(@h2, {type:"words,chars"})
     charsH2 = mySplitTextH2.chars
+    @tm.to( @container, 1.5,{autoAlpha: 1, ease: Ease.easeIn}, t+=3)
+    @tm.to(@h1, 1,autoAlpha: 1, scrambleText:{text:"solutions", chars:"Something gone wrong with you", revealDelay:0.5, tweenLength:false, ease:Linear.easeNone},t+=.3)
 
-    @tm.to(@h1, 1,autoAlpha: 1, scrambleText:{text:"solutions", chars:"Nique la sncf", revealDelay:0.5, tweenLength:false, ease:Linear.easeNone},t+=.3)
-
-    @tm.to( @container, 1.5,{autoAlpha: 1, ease: Ease.easeIn}, t+=.2)
+    
     @tm.staggerFrom(charsH2, 0.8,opacity: 0,scale: 0,y: 80,rotationX: 180,transformOrigin: "0% -50% 50",ease: Back.easeOut, 0.01, t+=.8)
 
     @tm.to( @h3, .5,{autoAlpha: 1,x: 0, ease: Back.easeOut}, t+=.2)
