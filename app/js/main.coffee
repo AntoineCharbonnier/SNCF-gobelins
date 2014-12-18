@@ -84,22 +84,7 @@ class App
         # console.log p.input.value
         @valueText = p.input.value
         # console.log @valueText
-        
-        # request3 = new XMLHttpRequest()
-        # console.log "on request 3",@gare
-        # request3.open "GET", "http://anarchy.rayanmestiri.com/ecs/"+@valueText, true
-        # request3.onload = (e) ->
-        #   console.log "passenger ",@numberTotalPassenger
-        #   if @numberTotalPassenger
-        #     console.log "EXIST",@numberTotalPassenger
-        #   tmp = JSON.parse(request3.response)
-        #   if tmp > 0 
-        #     @numberTotalPassenger = tmp
-        #     console.log "tmp >0",@numberTotalPassenger
-        #   # @percentPerson = (@numberPeopleInHour/@numberTotalPassenger)*100
-        #   # console.log "numberTotalPassenger",@numberTotalPassenger
-        # request3.send()
-              
+                    
       p.input.maxLength = 50 # limit the max number of characters in the input text
       p.hideDropDown()
 
@@ -134,11 +119,11 @@ class App
             @gare = stations[i].ecs
             reg = new RegExp("[ :]+", "g")
             tab = $("select#valueA").val().split(reg)
-            console.log parseInt(tab[0])
+            #console.log parseInt(tab[0])
             hour = parseInt(tab[0])
             if(hour<10)
               @realHour = "0"+hour
-              console.log "REAL HOUR",@realHour
+              #console.log "REAL HOUR",@realHour
             else
               @realHour = hour
           i++   
@@ -159,7 +144,7 @@ class App
           
       request.send()
 
-      console.log "at the end", @numberPeopleInHour,"  ",@numberTotalPassenger," percent : ",Math.round((@numberPeopleInHour/@numberTotalPassenger)*100)
+      #console.log "at the end", @numberPeopleInHour,"  ",@numberTotalPassenger," percent : ",Math.round((@numberPeopleInHour/@numberTotalPassenger)*100)
       @percentPerson = Math.round((@numberPeopleInHour/@numberTotalPassenger)*100)
 
       #easing data from reality experiences

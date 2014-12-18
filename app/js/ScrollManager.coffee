@@ -11,7 +11,8 @@ class ScrollManager extends ScrollManagerSingleton
     @index        = -1
     @pagesOffsets = []
     @keyArray     = [PagesTypes.TRANSILIENS, PagesTypes.COFFEE,PagesTypes.CLOCK, PagesTypes.TEETH,PagesTypes.SOLUTION, PagesTypes.TRAVEL , PagesTypes.SAVING,PagesTypes.DATA]
-
+    @classname = document.getElementsByClassName("arrow")
+    @skip = document.getElementsByClassName("skip")
     @i = 0
     @numberKeys = 0
     @isFirstScroll = yes
@@ -25,9 +26,11 @@ class ScrollManager extends ScrollManagerSingleton
 
     window.addEventListener "mousewheel", @scroll, false
     window.addEventListener "keydown", @keyControl, false
-    @classname = document.getElementsByClassName("arrow")
-    i = 0
+    @skip[0].addEventListener "click", @goToData, false
 
+
+    #arrow button
+    i = 0
     while i < @classname.length-1
       @classname[i].addEventListener "click", @arrowClicked, false
       i++
@@ -98,6 +101,13 @@ class ScrollManager extends ScrollManagerSingleton
     console.log "ARROW CLICK"
     @pages[@keyArray[@index]].hide()
     @i++
+    @index = @i
+    @pages[@keyArray[@index]].show()
+
+  goToData:(e)=>
+    console.log "GOTO DATA"
+    @pages[@keyArray[@index]].hide()
+    @i = 7
     @index = @i
     @pages[@keyArray[@index]].show()
 

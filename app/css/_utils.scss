@@ -75,6 +75,21 @@ a{
   cursor: pointer;
 }
 
+h6.skip{
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999999999999999;
+  cursor: pointer;
+  font : normal 500 10px "Avenir";
+  color: white;
+  text-align : center;
+  border: 1px solid white;
+  border-radius : 3px;
+  padding : 15px 20px;
+  text-transform: uppercase; 
+}
+
 
 @include desktop-and-below{
   h1{
@@ -108,5 +123,19 @@ a{
 
   a{
     font : normal 700 20px "Merryweather";
+  }
+  h6.skip{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9999999999999999;
+    cursor: pointer;
+    font : normal 500 10px "Avenir";
+    color: white;
+    text-align : center;
+    border: 1px solid white;
+    border-radius : 3px;
+    padding : 15px 20px;
+    text-transform: uppercase; 
   }
 }

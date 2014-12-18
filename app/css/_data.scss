@@ -272,6 +272,7 @@
         width: 50%;
         height: 300px;
         top: -60px;
+        right: 100px;
       }
       .select__box{
         width: 584px;
@@ -288,6 +289,10 @@
             left: -5px;
             font : normal 500 20px "Avenir";
           }
+        }
+        #autocomplete__field{
+          padding: 0px 20px;
+          height: 43px;
         }
         ul{
           padding : 10px 20px;
