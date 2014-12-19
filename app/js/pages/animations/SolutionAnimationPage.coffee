@@ -28,7 +28,7 @@ class SolutionAnimationPage
     #Split Text
     mySplitTextH2 = new SplitText(@h2, {type:"words,chars"})
     charsH2 = mySplitTextH2.chars
-    @tm.to( @container, 1.5,{autoAlpha: 1, ease: Ease.easeIn}, t+=3)
+    @tm.to( @container, 1.5,{autoAlpha: 1, ease: Ease.easeIn}, t+=3.5)
     @tm.to(@h1, 1,autoAlpha: 1, scrambleText:{text:"solutions", chars:"Something gone wrong with you", revealDelay:0.5, tweenLength:false, ease:Linear.easeNone},t+=.3)
 
     

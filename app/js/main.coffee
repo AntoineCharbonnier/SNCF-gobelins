@@ -15,8 +15,8 @@ class App
     @pages[PagesTypes.TRAVEL]      = new (require './pages/TravelPage')()
     @pages[PagesTypes.SAVING]      = new (require './pages/SavingPage')()
     @pages[PagesTypes.DATA]        = new (require './pages/DataPage')()
-    @pages[PagesTypes.QUIZZ]       = new (require './pages/QuizzPage')()
-    @pages[PagesTypes.OPTICAL]     = new (require './pages/OpticalPage')()
+    # @pages[PagesTypes.QUIZZ]       = new (require './pages/QuizzPage')()
+    # @pages[PagesTypes.OPTICAL]     = new (require './pages/OpticalPage')()
 
     
   
@@ -54,7 +54,7 @@ class App
     request.onload = (e) ->
       ecsName = JSON.parse(request.response)
       stations = []
-
+      console.log "LOAD LINE"
       $.each ecsName, (index, item) ->
         #console.log index, item
         stations.push
@@ -68,7 +68,7 @@ class App
       while i < stations.length
         myOptions.push(stations[i].name)
         i++
-          
+      # console.log myOptions
       owner = document.getElementById("autocomplete__field")
       p = completely(owner,
         fontSize: "10px"

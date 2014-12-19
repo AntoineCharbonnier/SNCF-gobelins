@@ -3,12 +3,12 @@
 @import "compass/utilities";
 
 
-@include font-face("AvenirNextCondensed", font-files("Avenir_Next_Condensed.ttc", truetype));//http://antoinecharbonnier.fr/test/SNCF/css/fonts/Avenir_Next_Condensed.ttc
-@include font-face("AvenirNext", font-files("Avenir_Next.ttc", truetype));
-@include font-face("Avenir", font-files("Avenir.ttc", truetype));
-@include font-face("GeorgiaItalic", font-files("Georgia Italic.ttf", truetype));
-@include font-face("Merryweather", font-files("typoserifunamed.ttf", truetype));
-@include font-face("AvenirNextLTPro-Bold", font-files("AvenirNextLTPro-Bold.ttf", truetype));
+@include font-face("AvenirNextCondensed", font-files("http://antoinecharbonnier.fr/test/SNCF/css/fonts/Avenir_Next_Condensed.ttc", truetype));//http://antoinecharbonnier.fr/test/SNCF/css/fonts/Avenir_Next_Condensed.ttc
+@include font-face("AvenirNext", font-files("http://antoinecharbonnier.fr/test/SNCF/css/fonts/Avenir_Next.ttc", truetype));
+@include font-face("Avenir", font-files("http://antoinecharbonnier.fr/test/SNCF/css/fonts/Avenir.ttc", truetype));
+@include font-face("GeorgiaItalic", font-files("http://antoinecharbonnier.fr/test/SNCF/css/fonts/Georgia_Italic.ttf", truetype));
+@include font-face("Merryweather", font-files("http://antoinecharbonnier.fr/test/SNCF/css/fonts/typoserifunamed.ttf", truetype));
+@include font-face("AvenirNextLTPro-Bold", font-files("http://antoinecharbonnier.fr/test/SNCF/css/fonts/AvenirNextLTPro-Bold.ttf", truetype));
 
 @import "media_queries";
 @import "utils";
@@ -42,4 +42,14 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  // z-index: 10;
+}
+.bigger__container--debug{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  // z-index: 0;
 }
