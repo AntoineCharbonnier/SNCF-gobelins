@@ -1,4 +1,7 @@
 .DS_Store
 *.log
-.sass-cache/
+.sass-cache/*
+.sass-cache
 .idea
+www/*
+www/

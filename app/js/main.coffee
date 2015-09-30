@@ -15,8 +15,8 @@ class App
     @pages[PagesTypes.TRAVEL]      = new (require './pages/TravelPage')()
     @pages[PagesTypes.SAVING]      = new (require './pages/SavingPage')()
     @pages[PagesTypes.DATA]        = new (require './pages/DataPage')()
-    # @pages[PagesTypes.QUIZZ]       = new (require './pages/QuizzPage')()
-    # @pages[PagesTypes.OPTICAL]     = new (require './pages/OpticalPage')()
+    @pages[PagesTypes.QUIZZ]       = new (require './pages/QuizzPage')()
+    @pages[PagesTypes.OPTICAL]     = new (require './pages/OpticalPage')()
 
     
   
@@ -45,7 +45,6 @@ class App
         labels: 9
         sliderOptions:
           change: (e, ui) ->
-            # console.log "hey" + ui.value + "    " + $("select#valueA").val()
             return
       return
 
@@ -56,37 +55,27 @@ class App
       stations = []
       console.log "LOAD LINE"
       $.each ecsName, (index, item) ->
-        #console.log index, item
         stations.push
           ecs: index
           name: item
-
-      #console.log stations
 
       i = 0
       myOptions = []
       while i < stations.length
         myOptions.push(stations[i].name)
         i++
-      # console.log myOptions
       owner = document.getElementById("autocomplete__field")
       p = completely(owner,
         fontSize: "10px"
         promptInnerHTML: ""
       )
-      # p.input.style.borderTop = "2px solid #999"
-      # p.input.style.borderBottom = "2px solid #999"
       p.options = myOptions
       p.hideDropDown()
       p.onChange = (text) ->
         p.hideDropDown()
         p.startFrom = 0
         p.repaint()
-        
-        # console.log p.input.value
         @valueText = p.input.value
-        # console.log @valueText
-                    
       p.input.maxLength = 50 # limit the max number of characters in the input text
       p.hideDropDown()
 
@@ -98,14 +87,7 @@ class App
 
 
 
-    #@requestManager = (require './RequestManager').get()  
     $(".ok").click =>
-     # @requestManager = (require './RequestManager').get() 
-     # console.log @requestManager
-     # @requestManager.getStations()
-      # console.log "value OK",$(".textInput").val()
-      # console.log $("select#valueA").val()
-
       request = new XMLHttpRequest()
       request.open "GET", "http://anarchy.rayanmestiri.com/ecs-name/all", false
       request.onreadystatechange = (e) =>
@@ -122,11 +104,9 @@ class App
             @gareName = stations[i].name
             reg = new RegExp("[ :]+", "g")
             tab = $("select#valueA").val().split(reg)
-            #console.log parseInt(tab[0])
             hour = parseInt(tab[0])
             if(hour<10)
               @realHour = "0"+hour
-              #console.log "REAL HOUR",@realHour
             else
               @realHour = hour
           i++   
@@ -148,7 +128,6 @@ class App
       request.send()
 
       console.log "GARE",@gareName
-      #console.log "at the end", @numberPeopleInHour,"  ",@numberTotalPassenger," percent : ",Math.round((@numberPeopleInHour/@numberTotalPassenger)*100)
       @percentPerson = Math.round((@numberPeopleInHour/@numberTotalPassenger)*100)
 
       #easing data from reality experiences
@@ -202,7 +181,6 @@ class App
         when 50<= @percentStress then 3
 
       console.log "affluence : ",@percentAffluence," saving : ",@percentSaving," stress : ",@percentStress
-      # console.log @pages
       @pages[PagesTypes.DATA].updatePercent(@percentAffluence,@percentSaving,@percentStress)
       @pages[PagesTypes.DATA].updateImg(@affluenceImg,@savingImg,@stressImg)
       @pages[PagesTypes.DATA].updateGare(@gareName)
