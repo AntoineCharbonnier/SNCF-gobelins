@@ -183,3 +183,13 @@ $mq-tv                     : 1600px !default;
     @content;
   }
 }
+
+
+// Everything larger than the desktop 
+@mixin between-desktop-and-big-screen {
+  @media only screen and (min-width: $mq-desktop)  and (max-width : $mq-tv) {
+    @content;
+  }
+}
+
+

@@ -304,3 +304,31 @@
     }
   }
 }
+
+
+
+
+@include between-desktop-and-big-screen {
+  .coffee{
+    .coffee__container{
+      .coffee__svg{
+        bottom: -150px;
+        width: 900px;
+      }
+      .drop1{
+        position: absolute;
+        display: block;
+        top: 520px;
+        right: 610px;
+      }
+      .drop2{
+        position: absolute;
+        display: block;
+        top: 500px;
+        right: 650px;
+      }
+    }
+  }
+}
+
+
