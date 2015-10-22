@@ -1,4 +1,8 @@
+[logo]: https://github.com/AntoineCharbonnier/SNCF-gobelins/blob/master/app/img/SNCF-logo.png
+
 # SNCF Project - Gobelins 2015
+
+![alt text][logo]
 
 Le but : Aider la compagnie SNCF a fluidifier son traffic ferroviaire
 La solution apportée : Creer des reductions sur les tickets selon des horaires. 
@@ -26,7 +30,7 @@ Recreer l'API des data de la SNCF. Ici detruite
 
 ### FRONT-END LANGUAGES
 
-  * HTML
+  * JADE
   * SASS
   * Coffeescript 
 
