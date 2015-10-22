@@ -12,8 +12,7 @@ pour que les utilisateurs habituels puissent être dans les heures "creuses" et 
 
 ## EN VIDEO
 
-[![Teaser Video](https://vimeo.com/143251261)]("Hep! Teaser Video")
-
+[Teaser Video](https://vimeo.com/143251261)
 
 
 
