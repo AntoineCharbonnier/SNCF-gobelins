@@ -9,13 +9,6 @@ La solution apportée : Creer des reductions sur les tickets selon des horaires.
 Amenant les entreprises qui remboursent les moyens de transports a changer leurs horaires,
 pour que les utilisateurs habituels puissent être dans les heures "creuses" et profiter des reductions et d'un voyage plus confortable.
 
-
-## EN VIDEO
-
-[Teaser Video](https://vimeo.com/143251261)
-
-
-
 ## INSTALL
 
 ```shell
