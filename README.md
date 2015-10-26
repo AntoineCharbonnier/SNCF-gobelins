@@ -28,7 +28,7 @@ gulp watch
 
   * Responsive
 
-  * ~Version tablette~~
+  * ~~Version tablette~~
 
 
 ### FRONT-END LANGUAGES
