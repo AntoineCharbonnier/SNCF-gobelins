@@ -48,137 +48,161 @@ class App
             return
       return
 
-    request = new XMLHttpRequest()
-    request.open "GET", "http://anarchy.rayanmestiri.com/ecs-name/all", true
-    request.onload = (e) ->
-      ecsName = JSON.parse(request.response)
-      stations = []
-      console.log "LOAD LINE"
-      $.each ecsName, (index, item) ->
-        stations.push
-          ecs: index
-          name: item
+    # request = new XMLHttpRequest()
+    # request.open "GET", "http://anarchy.rayanmestiri.com/ecs-name/all", true
+    # request.onload = (e) ->
+    #   ecsName = JSON.parse(request.response)
+    #   stations = []
+    #   console.log "LOAD LINE"
+    #   $.each ecsName, (index, item) ->
+    #     stations.push
+    #       ecs: index
+    #       name: item
 
-      i = 0
-      myOptions = []
-      while i < stations.length
-        myOptions.push(stations[i].name)
-        i++
-      owner = document.getElementById("autocomplete__field")
-      p = completely(owner,
-        fontSize: "10px"
-        promptInnerHTML: ""
-      )
-      p.options = myOptions
+    #   i = 0
+    # myOptions = []
+    myOptions = ["CDG","GDN"]
+    # while i < stations.length
+    #   myOptions.push(stations[i].name)
+    #   i++
+    owner = document.getElementById("autocomplete__field")
+    p = completely(owner,
+      fontSize: "10px"
+      promptInnerHTML: ""
+    )
+    p.options = myOptions
+    p.hideDropDown()
+    p.onChange = (text) ->
       p.hideDropDown()
-      p.onChange = (text) ->
-        p.hideDropDown()
-        p.startFrom = 0
-        p.repaint()
-        @valueText = p.input.value
-      p.input.maxLength = 50 # limit the max number of characters in the input text
-      p.hideDropDown()
+      p.startFrom = 0
+      p.repaint()
+      @valueText = p.input.value
+    p.input.maxLength = 50 # limit the max number of characters in the input text
+    p.hideDropDown()
 
-      return
+      # return
 
-    request.send()
+    # request.send()
 
 
 
 
 
     $(".ok").click =>
-      request = new XMLHttpRequest()
-      request.open "GET", "http://anarchy.rayanmestiri.com/ecs-name/all", false
-      request.onreadystatechange = (e) =>
-        ecsName = JSON.parse(request.response)
-        stations = []
-        $.each ecsName, (index, item) ->
-          stations.push
-            ecs: index
-            name: item
-        i = 0
-        while i < stations.length
-          if(stations[i].name ==$(".textInput").val())
-            @gare = stations[i].ecs
-            @gareName = stations[i].name
-            reg = new RegExp("[ :]+", "g")
-            tab = $("select#valueA").val().split(reg)
-            hour = parseInt(tab[0])
-            if(hour<10)
-              @realHour = "0"+hour
-            else
-              @realHour = hour
-          i++   
-        if request.readyState==4 && request.status==200
-          console.log "SUCESS"
-          request2 = new XMLHttpRequest()
-          request2.open "GET", "http://anarchy.rayanmestiri.com/ecs-time/"+@gare+"/"+@realHour, false
-          request2.onreadystatechange = (e) =>
-            @numberPeopleInHour = JSON.parse(request2.response)
-            if request2.readyState==4 && request2.status==200
-              request3 = new XMLHttpRequest()
-              request3.open "GET", "http://anarchy.rayanmestiri.com/ecs/"+@gare, false
-              request3.onreadystatechange = (e) =>
-                @numberTotalPassenger = JSON.parse(request3.response)
-              request3.send()
-          request2.send()
+      # request = new XMLHttpRequest()
+      # request.open "GET", "http://anarchy.rayanmestiri.com/ecs-name/all", false
+      # request.onreadystatechange = (e) =>
+      #   ecsName = JSON.parse(request.response)
+      #   stations = []
+      #   $.each ecsName, (index, item) ->
+      #     stations.push
+      #       ecs: index
+      #       name: item
+      #   i = 0
+      #   while i < stations.length
+      #     if(stations[i].name ==$(".textInput").val())
+      #       @gare = stations[i].ecs
+      #       @gareName = stations[i].name
+      #       reg = new RegExp("[ :]+", "g")
+      #       tab = $("select#valueA").val().split(reg)
+      #       hour = parseInt(tab[0])
+      #       if(hour<10)
+      #         @realHour = "0"+hour
+      #       else
+      #         @realHour = hour
+      #     i++   
+      #   if request.readyState==4 && request.status==200
+      #     console.log "SUCESS"
+      #     request2 = new XMLHttpRequest()
+      #     request2.open "GET", "http://anarchy.rayanmestiri.com/ecs-time/"+@gare+"/"+@realHour, false
+      #     request2.onreadystatechange = (e) =>
+      #       @numberPeopleInHour = JSON.parse(request2.response)
+      #       if request2.readyState==4 && request2.status==200
+      #         request3 = new XMLHttpRequest()
+      #         request3.open "GET", "http://anarchy.rayanmestiri.com/ecs/"+@gare, false
+      #         request3.onreadystatechange = (e) =>
+      #           @numberTotalPassenger = JSON.parse(request3.response)
+      #         request3.send()
+      #     request2.send()
           
           
-      request.send()
+      # request.send()
 
-      console.log "GARE",@gareName
-      @percentPerson = Math.round((@numberPeopleInHour/@numberTotalPassenger)*100)
+      # console.log "GARE",@gareName
+      # @percentPerson = Math.round((@numberPeopleInHour/@numberTotalPassenger)*100)
+
+
+      reg = new RegExp("[ :]+", "g")
+      tab = $("select#valueA").val().split(reg)
+      hour = parseInt(tab[0])
+      if(hour<10)
+        @realHour = "0"+hour
+      else
+        @realHour = hour
+
+      console.log @realHour
 
       #easing data from reality experiences
-      if @numberTotalPassenger > 10000
+      if  ( 5 < @realHour < 6 ) || ( 20 < @realHour < 22 )
+        console.log "AA"
         @easingSwitchLotPeople = Math.round(0+Math.random() * (5 - 1) + 1)
 
-      if @numberTotalPassenger > 20000
+      if  ( 6 < @realHour < 8 ) || ( 18 < @realHour < 19 )
+        console.log "BB"
         @easingSwitchLotPeople = Math.round(0+Math.random() * (10 - 4) + 4)
       
-      if @numberTotalPassenger > 40000
+      if  ( 8 < @realHour < 10 ) || ( 16 < @realHour < 17 )
+        console.log "CC"
         @easingSwitchLotPeople = Math.round(0+Math.random() * (20 - 8) + 8)
 
-      if @numberTotalPassenger > 50000
+      if  ( 10 < @realHour < 15 ) || ( 15 < @realHour < 16 )
+        console.log "DD"
         @easingSwitchLotPeople = Math.round(0+Math.random() * (50 - 20) + 20)
 
 
       #calculate values from data
-      if @percentPerson <= 8
+      if ( 5 < @realHour < 6 ) || ( 20 < @realHour < 22 )
+      # if @percentPerson <= 8
+        @percentPerson    = 20
         @percentAffluence = Math.round(@percentPerson)+@easingSwitchLotPeople
-        @percentSaving = 50
-        @percentStress= Math.round(0+Math.random() * (8 - 2) + 2)+@easingSwitchLotPeople
+        @percentSaving    = 50
+        @percentStress    = Math.round(0+Math.random() * (8 - 2) + 2)+@easingSwitchLotPeople
 
-      if @percentPerson >8
+      if ( 6 < @realHour < 8 ) || ( 18 < @realHour < 19 )
+      # if @percentPerson >8
+        @percentPerson    = 120
         @percentAffluence = Math.round(@percentPerson*2.15)+@easingSwitchLotPeople
-        @percentSaving = 20
-        @percentStress= Math.round(@percentPerson*2.33+Math.random() * (8 - 2) + 2)+@easingSwitchLotPeople
+        @percentSaving    = 0
+        @percentStress    = Math.round(@percentPerson*2.33+Math.random() * (8 - 2) + 2)+@easingSwitchLotPeople
 
-      if @percentPerson >10
+      if ( 8 < @realHour < 10 ) || ( 16 < @realHour < 17 )
+      # if @percentPerson >10
+        @percentPerson    = 80
         @percentAffluence = Math.round(@percentPerson*2.15)+@easingSwitchLotPeople
-        @percentSaving = 5
-        @percentStress= Math.round(@percentPerson*2.33+Math.random() * (8 - 2) + 2)+@easingSwitchLotPeople
+        @percentSaving    = 20
+        @percentStress    = Math.round(@percentPerson*2.33+Math.random() * (8 - 2) + 2)+@easingSwitchLotPeople
 
-      if @percentPerson >15
+      if ( 10 < @realHour < 15 ) || ( 15 < @realHour < 16 )
+      # if @percentPerson >15
+        @percentPerson    = 10
         @percentAffluence = @percentPerson*3+@easingSwitchLotPeople
-        @percentSaving = 0
-        @percentStress= Math.round(@percentPerson*5+Math.random() * (40 - 15) + 15)+@easingSwitchLotPeople
+        @percentSaving    = 70
+        @percentStress    = Math.round(@percentPerson*5+Math.random() * (40 - 15) + 15)+@easingSwitchLotPeople
 
       @affluenceImg = switch
-        when 0<= @percentAffluence < 20 then 1
-        when 20<= @percentAffluence < 50  then 2
-        when 50<= @percentAffluence then 3
+        when 0  <= @percentAffluence < 20 then 1
+        when 20 <= @percentAffluence < 50  then 2
+        when 50 <= @percentAffluence then 3
 
       @savingImg = switch
-        when 0<= @percentSaving < 30 then 1
-        when 30<= @percentSaving < 50  then 2
-        when 50<= @percentSaving then 3
+        when 0  <= @percentSaving < 30 then 1
+        when 30 <= @percentSaving < 50  then 2
+        when 50 <= @percentSaving then 3
 
       @stressImg = switch
-        when 0<= @percentStress < 20 then 1
-        when 20<= @percentStress < 50  then 2
-        when 50<= @percentStress then 3
+        when 0  <= @percentStress < 20 then 1
+        when 20 <= @percentStress < 50  then 2
+        when 50 <= @percentStress then 3
 
       console.log "affluence : ",@percentAffluence," saving : ",@percentSaving," stress : ",@percentStress
       @pages[PagesTypes.DATA].updatePercent(@percentAffluence,@percentSaving,@percentStress)
