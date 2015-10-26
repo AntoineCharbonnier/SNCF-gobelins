@@ -25,7 +25,8 @@ gulp watch
 ## TO DO 
 
 Recreer l'API des data de la SNCF. Ici detruite
-
+Responsive
+~~Version tablette~~
 
 
 ### FRONT-END LANGUAGES

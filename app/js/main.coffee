@@ -187,7 +187,7 @@ class App
         @percentPerson    = 10
         @percentAffluence = @percentPerson*3+@easingSwitchLotPeople
         @percentSaving    = 70
-        @percentStress    = Math.round(@percentPerson*5+Math.random() * (40 - 15) + 15)+@easingSwitchLotPeople
+        @percentStress    = (Math.round(@percentPerson*5+Math.random() * (40 - 15) + 15)+@easingSwitchLotPeople) * 0.33
 
       @affluenceImg = switch
         when 0  <= @percentAffluence < 20 then 1
