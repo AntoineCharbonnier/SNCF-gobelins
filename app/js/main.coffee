@@ -212,92 +212,164 @@ class App
         @percentStress    = 0
         @percentSaving    = 50
         @percentAffluence = 10
+        
+        @affluenceImg     = 1
+        @savingImg        = 3
+        @stressImg        = 1
 
       if ( @realHour == "06" )
         @percentStress    = 0
         @percentSaving    = 50
         @percentAffluence = 15
 
+        @affluenceImg     = 1
+        @savingImg        = 3
+        @stressImg        = 1
+
       if ( @realHour == "07" )
         @percentStress    = 120
         @percentSaving    = 0
         @percentAffluence = 200
+
+        @affluenceImg     = 3
+        @savingImg        = 1
+        @stressImg        = 3
+
       if ( @realHour == "08" )
 
         @percentStress    = 100
         @percentSaving    = 0
         @percentAffluence = 100
-      
+
+        @affluenceImg     = 3
+        @savingImg        = 1
+        @stressImg        = 3
+
       if ( @realHour == "09" )
         @percentStress    = 70
         @percentSaving    = 5
         @percentAffluence = 95
-      
+
+        @affluenceImg     = 2
+        @savingImg        = 2
+        @stressImg        = 2
+
       if ( @realHour == 10 )
         @percentStress    = 3
         @percentSaving    = 20
         @percentAffluence = 60
-      
+
+        @affluenceImg     = 2
+        @savingImg        = 2
+        @stressImg        = 1
+
       if ( @realHour == 12 )
         @percentStress    = 0
         @percentSaving    = 50
         @percentAffluence = 10
-      
+
+        @affluenceImg     = 1
+        @savingImg        = 3
+        @stressImg        = 1
+
       if ( @realHour == 13 )
         @percentStress    = 5
         @percentSaving    = 50
         @percentAffluence = 5
-      
+
+        @affluenceImg     = 1
+        @savingImg        = 3
+        @stressImg        = 1
+
       if ( @realHour == 14 )
         @percentStress    = 30
         @percentSaving    = 20
         @percentAffluence = 40
-      
+
+        @affluenceImg     = 2
+        @savingImg        = 2
+        @stressImg        = 2
+
       if ( @realHour == 15 )
         @percentStress    = 0
         @percentSaving    = 50
         @percentAffluence = 10
-      
+
+        @affluenceImg     = 1
+        @savingImg        = 3
+        @stressImg        = 1
+
       if ( @realHour == 16 )
         @percentStress    = 5
         @percentSaving    = 45
         @percentAffluence = 15
-      
+
+        @affluenceImg     = 1
+        @savingImg        = 2
+        @stressImg        = 1
+
       if ( @realHour == 17 )
         @percentStress    = 85
         @percentSaving    = 5
         @percentAffluence = 90
-      
+
+        @affluenceImg     = 3
+        @savingImg        = 1
+        @stressImg        = 3
+
       if ( @realHour == 18 )
         @percentStress    = 200
         @percentSaving    = 0
         @percentAffluence = 100
-      
+
+        @affluenceImg     = 3
+        @savingImg        = 1
+        @stressImg        = 3
+
       if ( @realHour == 19 )
         @percentStress    = 250
         @percentSaving    = 0
         @percentAffluence = 220
-      
+
+        @affluenceImg     = 3
+        @savingImg        = 1
+        @stressImg        = 3
+
       if ( @realHour == 20 )
         @percentStress    = 30
         @percentSaving    = 20
         @percentAffluence = 50
-      
+
+        @affluenceImg     = 2
+        @savingImg        = 2
+        @stressImg        = 2
+
       if ( @realHour == 21 )
         @percentStress    = 0
         @percentSaving    = 50
         @percentAffluence = 10
-      
+
+        @affluenceImg     = 1
+        @savingImg        = 3
+        @stressImg        = 1
+
       if ( @realHour == 22 )
         @percentStress    = 0
         @percentSaving    = 50
         @percentAffluence = 10
-      
+
+        @affluenceImg     = 1
+        @savingImg        = 3
+        @stressImg        = 1
+
       if ( @realHour == 23 )
         @percentStress    = 0
         @percentSaving    = 50
         @percentAffluence = 10
 
+        @affluenceImg     = 1
+        @savingImg        = 3
+        @stressImg        = 1
 
 
       console.log "affluence : ",@percentAffluence," saving : ",@percentSaving," stress : ",@percentStress
